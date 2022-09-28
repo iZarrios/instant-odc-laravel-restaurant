@@ -37,7 +37,7 @@ Route::get('/contacts', [ContactsController::class, 'index'])->name('contacts.in
 
 
 // Begin Manage (Dashboard) Routes
-Route::group(['prefix' => 'manage', 'as' => 'manage.', 'middleware' => ['auth', 'isManager']], function() {
+Route::group(['prefix' => 'manage', 'as' => 'manage.', 'middleware' => ['auth', 'isManager']], function () {
     Route::get('/', [HomeController::class, 'index'])->name('home.index');
     Route::resource('/meals', MealController::class);
     Route::resource('/dishes', DishController::class);
